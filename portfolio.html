@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sweta | Web Developer</title>
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #0b0f1a;
+      color: #fff;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.light {
+      background: #f4f6ff;
+      color: #111;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(10px);
+      z-index: 200;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 15px;
+      opacity: 0.85;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    .toggle {
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    /* SOCIAL SIDEBAR */
+    .social-sidebar {
+      position: fixed;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      z-index: 100;
+    }
+
+    .social-sidebar a {
+      color: #cfd3ff;
+      font-size: 20px;
+      transition: transform 0.2s;
+    }
+
+    .social-sidebar a:hover {
+      transform: translateX(6px);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      padding: 120px 10%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero-text {
+      max-width: 520px;
+    }
+
+    .hero-text h1 {
+      font-size: 52px;
+    }
+
+    .hero-text h1 span {
+      color: #ff5fa2;
+    }
+
+    .hero-text h2 {
+      font-weight: 400;
+      font-size: 22px;
+      margin: 15px 0;
+      opacity: 0.9;
+    }
+
+    .hero-text p {
+      line-height: 1.7;
+      opacity: 0.8;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 12px 26px;
+      border-radius: 30px;
+      border: none;
+      background: linear-gradient(90deg, #ff5fa2, #6a5cff);
+      color: white;
+      cursor: pointer;
+    }
+
+    /* IMAGE + BLOB */
+    .hero-img {
+      position: relative;
+    }
+
+    .blob {
+      width: 280px;
+      height: 280px;
+      background: linear-gradient(135deg, #ff5fa2, #6a5cff);
+      border-radius: 50%;
+      filter: blur(35px);
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .profile {
+      width: 260px;
+      position: relative;
+      z-index: 1;
+      border-radius: 12px;
+    }
+
+    /* PROJECTS */
+    .projects {
+      padding: 80px 10%;
+    }
+
+    .projects h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      padding: 25px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+      transition: transform 0.2s;
+    }
+
+    body.light .card {
+      background: #fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .hero-img {
+        margin-bottom: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .social-sidebar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <strong>Sweta.</strong>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+    <div class="toggle" onclick="toggleMode()">🌙</div>
+  </nav>
+
+  <!-- SIDEBAR -->
+  <div class="social-sidebar">
+    <a href="https://github.com/swetajha3" target="_blank"><i class="fa-brands fa-github"></i></a>
+    <a href="https://linkedin.com/in/swetuhh" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://twitter.com/zoobidoooo" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h1>Hi, I’m <span>Sweta</span></h1>
+      <h2>Web Developer • B.Tech IT</h2>
+      <p>I build modern, clean, and user-focused websites.</p>
+      <button class="btn">Download CV</button>
+    </div>
+
+    <div class="hero-img">
+      <div class="blob"></div>
+      <img src="sweta.jpeg" class="profile">
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <h2>Projects</h2>
+    <div class="cards">
+      <div class="card">Portfolio Website</div>
+    </div>
+  </section>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("light");
+    }
+  </script>
+
+</body>
+</html>
